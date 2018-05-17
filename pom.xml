@@ -17,11 +17,11 @@
 		<log4j2.version>2.8.2</log4j2.version>
 		<disruptor.version>3.3.2</disruptor.version>
 		<!-- Utils -->
-        <commons-lang3.version>3.6</commons-lang3.version>
-        <commons-beanutils.version>1.8.0</commons-beanutils.version>
-        <commons-collections4.version>4.1</commons-collections4.version>
-        <guava.version>18.0</guava.version>
-        <lombok.version>1.16.10</lombok.version>
+		<commons-lang3.version>3.6</commons-lang3.version>
+		<commons-beanutils.version>1.8.0</commons-beanutils.version>
+		<commons-collections4.version>4.1</commons-collections4.version>
+		<guava.version>18.0</guava.version>
+		<lombok.version>1.16.10</lombok.version>
 	</properties>
 
 	<!-- spring boot 基本环境 -->
@@ -76,36 +76,32 @@
 
 		<!-- util -->
 		<dependency>
-            <groupId>commons-beanutils</groupId>
-            <artifactId>commons-beanutils</artifactId>
-            <version>${commons-beanutils.version}</version>
-        </dependency>
-		<dependency>
-		    <groupId>org.apache.commons</groupId>
-		    <artifactId>commons-collections4</artifactId>
-		    <version>${commons-collections4.version}</version>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
 		</dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${commons-lang3.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-        </dependency>   
-		<!-- spring-boot utils: hot deployment -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<optional>true</optional>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<version>${commons-collections4.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang3.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+
+		<!-- spring-boot utils: hot deployment <dependency> <groupId>org.springframework.boot</groupId> 
+			<artifactId>spring-boot-devtools</artifactId> <optional>true</optional> </dependency> -->
+
 		<!-- Json -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -120,34 +116,17 @@
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
 
-		<!-- Log -->
+		<!-- Log 
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-web</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-slf4j-impl</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.lmax</groupId>
 			<artifactId>disruptor</artifactId>
-			<version>${disruptor.version}</version>
+			<version>3.3.2</version>
 		</dependency>
+		-->
 	</dependencies>
 
 	<repositories>

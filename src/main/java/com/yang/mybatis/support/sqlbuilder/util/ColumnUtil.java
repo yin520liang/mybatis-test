@@ -5,6 +5,7 @@ import java.lang.reflect.Method;
 import java.sql.Date;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +15,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Maps;
-import com.yang.mybatis.support.sqlbuilder.SqlBuilderContext;
+import com.yang.mybatis.support.sqlbuilder.TableContext;
 import com.yang.mybatis.support.sqlbuilder.annotation.Column;
 import com.yang.mybatis.support.sqlbuilder.annotation.Id;
 import com.yang.mybatis.support.sqlbuilder.bean.SaveInfo;
@@ -68,7 +69,7 @@ public class ColumnUtil {
 		return columnName;
 	}
 
-	public static String getColumnName(String properties, SqlBuilderContext context) {
+	public static String getColumnName(String properties, TableContext context) {
 		return getColumnName(properties, context.getFieldMapColumn(), context.getColumnMapField());
 	}
 
@@ -216,5 +217,14 @@ public class ColumnUtil {
 	// }
 	// }
 	// }
+	
+	public static String getColumnNames(TableDefine tableDef) {
+		List<ColumnDefine> columnDefs = tableDef.getColumnDefines();
+		StringBuilder builder = new StringBuilder();
+		for(ColumnDefine cdf : columnDefs) {
+			builder.append(',').append(cdf.getColumnName());
+		}
+		return builder.substring(1).toString();
+	}
 
 }

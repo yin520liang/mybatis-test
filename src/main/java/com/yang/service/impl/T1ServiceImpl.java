@@ -26,14 +26,7 @@ public class T1ServiceImpl implements T1Service{
 
 	@Override
 	public T1 getById(Long id) {
-		return dao.selectById(id);
-	}
-
-
-
-	@Override
-	public List<T1> list() {
-		return dao.list();
+		return dao.getById(id);
 	}
 
 }

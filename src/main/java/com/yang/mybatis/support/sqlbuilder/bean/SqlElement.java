@@ -1,6 +1,6 @@
 package com.yang.mybatis.support.sqlbuilder.bean;
 
-import com.yang.mybatis.support.sqlbuilder.SqlBuilderContext;
+import com.yang.mybatis.support.sqlbuilder.TableContext;
 
 /**
  * @title SqlElement
@@ -11,6 +11,6 @@ import com.yang.mybatis.support.sqlbuilder.SqlBuilderContext;
  */
 public interface SqlElement {
 
-    public abstract String toSql(SqlBuilderContext context);
+    public abstract String toSql(TableContext context);
 
 }

@@ -2,6 +2,10 @@ package com.yang.entity;
 
 import java.io.Serializable;
 
+import com.yang.mybatis.support.sqlbuilder.annotation.GeneratedValue;
+import com.yang.mybatis.support.sqlbuilder.annotation.Id;
+import com.yang.mybatis.support.sqlbuilder.annotation.Table;
+
 /**
  * <p>
  * 
@@ -10,13 +14,14 @@ import java.io.Serializable;
  * @author yang123
  * @since 2018-05-14
  */
+@Table(name = "t1")
 public class T1 {
-
-    private static final long serialVersionUID = 1L;
 
     /**
      * id
      */
+    @Id
+	@GeneratedValue
     private Integer id;
 
     private String name;

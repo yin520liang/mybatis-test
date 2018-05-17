@@ -3,14 +3,22 @@
  */
 package com.yang.entity;
 
+import com.yang.mybatis.support.sqlbuilder.annotation.GeneratedValue;
+import com.yang.mybatis.support.sqlbuilder.annotation.Id;
+import com.yang.mybatis.support.sqlbuilder.annotation.Table;
+
 /**
  * @Title T2
  * @Description 
  * @Author lvzhaoyang
  * @Date 2018年5月14日
  */
+@Table(name = "t2")
 public class T2 {
+	@Id
+	@GeneratedValue
 	Long id;
+	
 	String name;
 	
 	public Long getId() {

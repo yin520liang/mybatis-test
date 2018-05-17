@@ -16,7 +16,5 @@ import com.yang.entity.T1;
 public interface T1Service {
 	
 	T1 getById(Long id);
-	
-	List<T1> list();
 
 }

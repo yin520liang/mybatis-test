@@ -3,6 +3,7 @@
  */
 package com.yang.dao;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -13,8 +14,15 @@ import java.util.List;
  */
 public interface BaseMapper<T> {
 	
-	T selectById(Long id);
+	T getById(Long id);
 	
-	List<T> list();
+	// a query has not been injected sql, will throw exception
+	List<T> listByIds(Collection ids);
+	
+	boolean save(T e);
+	
+	boolean update(T e);
+	
+	boolean remove(T e);
 
 }
