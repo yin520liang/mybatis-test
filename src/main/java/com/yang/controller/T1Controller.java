@@ -1,8 +1,11 @@
 package com.yang.controller;
 
 
+import java.util.Collection;
+
 import lombok.extern.slf4j.Slf4j;
 
+import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -48,14 +51,14 @@ public class T1Controller {
 	}
 
 
-//	@RequestMapping(value = "/type")
-//	public String size() {
-//		Map<String, Class<?>> map = factory.getConfiguration().getTypeAliasRegistry().getTypeAliases();
-//		StringBuilder builder = new StringBuilder();
-//		for(Entry<String, Class<?>> entry : map.entrySet()) {
-//			builder.append(entry.getKey()).append(':').append(entry.getValue().getName()).append(",\n");
-//		}
-//		return builder.toString();
-//	}
+	@RequestMapping(value = "/type")
+	public String size() {
+		Collection<Class<?>> mappers = factory.getConfiguration().getMapperRegistry().getMappers();
+		StringBuilder builder = new StringBuilder();
+		for(Class<?> mp : mappers) {
+			builder.append(mp.getName()).append(", ");
+		}
+		return builder.toString();
+	}
 }
 

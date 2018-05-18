@@ -1,6 +1,7 @@
 package com.yang.dao;
 
 import com.yang.entity.T1;
+import com.yang.mybatis.support.BaseMapper;
 
 /**
  * <p>

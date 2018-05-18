@@ -11,5 +11,5 @@ package com.yang.mybatis.support.injector;
  */
 public interface SqlInjector {
 	
-	void injectSqls(Class<?> entityClass);
+	void injectSqls(Class<?> mapperClass);
 }

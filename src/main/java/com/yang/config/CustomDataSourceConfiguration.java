@@ -19,6 +19,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.yang.config.properties.CustomDataSourceProperties;
+import com.yang.mybatis.support.MybatisBaseMapperSupport;
 
 /**
  * @Title CustomDataSourceConfiguration
@@ -72,6 +73,15 @@ public class CustomDataSourceConfiguration {
 		DataSourceTransactionManager transactionManager = new DataSourceTransactionManager(dataSource);
 		transactionManager.setNestedTransactionAllowed(true);	
 		return transactionManager;
+	}
+	
+	
+	/**
+	 * register mybatisBaseMapperSupport
+	 */
+	@Bean
+	public MybatisBaseMapperSupport mybatisBaseMapperSupport() {
+		return new MybatisBaseMapperSupport();
 	}
 	
 }
