@@ -32,7 +32,7 @@ public class TableContext {
 
 	private ColumnDefine idColumn;
 	
-	private String from;
+	private String tableName;
 
     private AtomicInteger conditionIndex = new AtomicInteger(0);
 
@@ -44,7 +44,7 @@ public class TableContext {
     public TableContext(Class<?> poClass) {
     	this.poClass = poClass;
 		this.tableDefine = ClassFieldUtil.readFieldColumnFromEntityCalss(poClass);
-		from = tableDefine.getName();
+		tableName = tableDefine.getName();
 		if (this.tableDefine != null) {
 			fieldMapColumn = new HashMap<String, String>();
 			columnMapField = new HashMap<String, String>();
