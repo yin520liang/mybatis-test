@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yang.dao.T1Mapper">
+
+	<!-- 通用查询映射结果 <resultMap id="t1" type="com.yang.entity.T1"> <id column="id" 
+		property="id" /> <result column="name" property="name" /> <result column="age" 
+		property="age" /> </resultMap> -->
+
+
+	<!-- 通用查询结果列 -->
+	<select id="getById" parameterType="long" resultType="T1" useCache="true">
+		select id, name, age from t1 where id=#{id}
+	</select>
+
+	<select id="listByIds" resultType="T1" useCache="true">
+		select id, name, age from t1 where id in
+		<foreach item="id" index="index" collection="collection" open="("
+			separator="," close=")">
+			#{id}
+		</foreach>
+	</select>
+
+	<!-- enable cache -->
+	<cache eviction="FIFO" flushInterval="60000" size="5" readOnly="true"
+		type="org.mybatis.caches.ehcache.EhcacheCache" >
+		<property name="timeToIdleSeconds" value="3600" />
+		<property name="timeToLiveSeconds" value="3600" />
+		<property name="maxEntriesLocalHeap" value="1" />
+		<property name="maxEntriesLocalDisk" value="10000" />
+		<property name="memoryStoreEvictionPolicy" value="LRU" />
+	</cache>
+
+</mapper>

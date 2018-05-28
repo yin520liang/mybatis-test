@@ -1,5 +1,6 @@
 package com.yang.service;
 
+import java.util.Collection;
 import java.util.List;
 
 import com.yang.entity.T1;
@@ -16,5 +17,7 @@ import com.yang.entity.T1;
 public interface T1Service {
 	
 	T1 getById(Long id);
+	
+	List<T1> listByIds(Collection<Long> ids);
 
 }

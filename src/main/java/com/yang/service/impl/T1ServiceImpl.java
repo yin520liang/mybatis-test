@@ -1,5 +1,6 @@
 package com.yang.service.impl;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,13 @@ public class T1ServiceImpl implements T1Service{
 	@Override
 	public T1 getById(Long id) {
 		return dao.getById(id);
+	}
+
+
+
+	@Override
+	public List<T1> listByIds(Collection<Long> ids) {
+		return dao.listByIds(ids);
 	}
 
 }

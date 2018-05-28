@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @Title Application
- * @Description 
+ * @Description
  * @Author lvzhaoyang
  * @Date 2018年5月14日
  */

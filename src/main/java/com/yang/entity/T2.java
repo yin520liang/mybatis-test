@@ -3,6 +3,8 @@
  */
 package com.yang.entity;
 
+import java.io.Serializable;
+
 import com.yang.mybatis.support.sqlbuilder.annotation.GeneratedValue;
 import com.yang.mybatis.support.sqlbuilder.annotation.Id;
 import com.yang.mybatis.support.sqlbuilder.annotation.Table;
@@ -14,7 +16,12 @@ import com.yang.mybatis.support.sqlbuilder.annotation.Table;
  * @Date 2018年5月14日
  */
 @Table(name = "t2")
-public class T2 {
+public class T2 implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2581812450650246310L;
+
 	@Id
 	@GeneratedValue
 	Long id;
